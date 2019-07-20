@@ -8,6 +8,10 @@ app.get('/', (req, res, next)=> res.send({
   data: 'foo bar'
 })); 
 
+app.get('/foo', (req, res, next)=> {
+  res.send({ foo: req.headers.foo})
+}); 
+
 app.post('/', (req, res, next)=> res.status(201).send({
   data: req.body.text.toUpperCase() 
 })); 

@@ -11,6 +11,16 @@ describe('my app', ()=> {
         });
     });
   });
+  describe('GET /foo', ()=> {
+    it('returns something from header', ()=> {
+      return app.get('/foo')
+        .set('foo', 'bar')
+        .expect(200)
+        .then( response => {
+          expect(response.body.foo).to.equal('bar');
+        });
+    });
+  });
   describe('POST /', ()=> {
     it('return FOO BAR', ()=> {
       return app.post('/')
