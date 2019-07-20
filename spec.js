@@ -17,7 +17,7 @@ describe('my app', ()=> {
         .set('foo', 'bar')
         .expect(200)
         .then( response => {
-          expect(response.body.foo).to.equal('bar');
+          expect(response.body.foo).to.equal('ba');
         });
     });
   });
